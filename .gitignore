@@ -1,0 +1,17 @@
+# node / tooling
+node_modules/
+dist/
+coverage/
+.npmrc
+.env
+.env.*
+
+# macOS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# AoC inputs
+day*/input*.txt
+input*.txt

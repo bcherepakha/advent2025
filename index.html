@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advent of Code 2025 Runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Advent of Code 2025 Runner</h1>
+
+  <div class="controls">
+    <label>
+      Day:
+      <input id="day" type="number" min="1" max="25" />
+    </label>
+
+    <label>
+      Part:
+      <select id="part">
+        <option value="1">Part 1</option>
+        <option value="2">Part 2</option>
+      </select>
+    </label>
+  </div>
+
+  <textarea id="input" placeholder="Paste your puzzle input here"></textarea>
+
+  <button id="run">Run</button>
+
+  <pre id="result"></pre>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "advent-of-code-2025",
+  "version": "0.1.0",
+  "description": "My solutions for Advent of Code 2025",
+  "type": "module",
+  "scripts": {
+    "solve": "node run.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --check",
+    "format:write": "prettier . --write"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
