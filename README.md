@@ -136,7 +136,7 @@ The runner automatically selects the solver and resolves the input file (part-sp
 
 Checklist of solved days:
 
-* [ ] Day 01 – [X] Part 1 / [ ] Part 2
+* [X] Day 01 – [X] Part 1 / [X] Part 2
 * [ ] Day 02 – Part 1 / Part 2
 * [ ] Day 03 – Part 1 / Part 2
 * [ ] Day 04 – Part 1 / Part 2
