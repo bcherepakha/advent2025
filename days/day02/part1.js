@@ -1,3 +1,6 @@
+import { parseRanges } from "../_lib/ranges.js"; 
+import { ceilDiv } from "../_lib/math.js";
+
 /**
  * Solve Advent of Code 2025 Day 2, Part 1.
  *
@@ -51,106 +54,6 @@ function solveCore(input) {
   }
 
   return total;
-}
-
-/**
- * Parse input into array of non-overlapping [start, end] ranges (BigInt).
- *
- * Input format:
- *   "11-22,95-115,998-1012,..."
- *
- * Ranges may appear in any order in the input.
- * We'll:
- *   1) parse all valid ranges,
- *   2) sort them by start (then by end),
- *   3) optionally drop or error on overlapping ranges.
- *
- * @param {string} input
- * @param {{ onInvalid?: "error" | "ignore" }} [options]
- * @returns {{ start: bigint, end: bigint }[]}
- */
-function parseRanges(input, { onInvalid = "ignore" }) {
-  /** @type {{ start: bigint, end: bigint }[]} */
-  const raw = [];
-
-  const tokens = input
-    .trim()
-    .split(",")
-    .map((t) => t.trim())
-    .filter((t) => t.length > 0);
-
-  for (const token of tokens) {
-    const [startStr, endStr] = token.split("-").map((s) => s.trim());
-
-    let valid = true;
-    let start = 0n;
-    let end = 0n;
-
-    if (!startStr || !endStr) {
-      valid = false;
-    } else {
-      try {
-        start = BigInt(startStr);
-        end = BigInt(endStr);
-      } catch {
-        valid = false;
-      }
-
-      if (valid && end < start) {
-        valid = false;
-      }
-    }
-
-    if (!valid) {
-      const message = `Invalid range token: "${token}"`;
-      if (onInvalid === "error") {
-        throw new Error(message);
-      } else {
-        // ignore invalid token
-        continue;
-      }
-    }
-
-    raw.push({ start, end });
-  }
-
-  if (raw.length === 0) {
-    return [];
-  }
-
-  // Сортируем по start, затем по end
-  raw.sort((a, b) => {
-    if (a.start < b.start) return -1;
-    if (a.start > b.start) return 1;
-    if (a.end < b.end) return -1;
-    if (a.end > b.end) return 1;
-    return 0;
-  });
-
-  // Проверяем пересечения; при onInvalid:"ignore" — просто выкидываем пересекающиеся
-  /** @type {{ start: bigint, end: bigint }[]} */
-  const ranges = [];
-  let current = raw[0];
-  ranges.push(current);
-
-  for (let i = 1; i < raw.length; i++) {
-    const r = raw[i];
-    if (r.start <= current.end) {
-      // Есть пересечение/наложение
-      const message = `Overlapping ranges: [${current.start}-${current.end}] and [${r.start}-${r.end}]`;
-      if (onInvalid === "error") {
-        throw new Error(message);
-      } else {
-        // ignore this overlapping range
-        continue;
-      }
-    } else {
-      ranges.push(r);
-      current = r;
-    }
-  }
-
-  return ranges;
 }
 
 /**
@@ -217,19 +120,4 @@ function sumInvalidInRange(min, max) {
   }
 
   return sum;
-}
-
-/**
- * Compute ceil(a / b) for non-negative BigInts.
- *
- * @param {bigint} a
- * @param {bigint} b
- * @returns {bigint}
- */
-function ceilDiv(a, b) {
-  if (a <= 0n) {
-    return 0n;
-  }
-
-  return (a + b - 1n) / b;
 }

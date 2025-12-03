@@ -139,7 +139,7 @@ Checklist of solved days:
 * [X] [Day 01 Part 1](./days/day01/part1.js)
 * [X] [Day 01 Part 2](./days/day01/part2.js)
 * [X] [Day 02 Part 1](./days/day02/part1.js)
-* [ ] Day 02 Part 2
+* [X] [Day 02 Part 2](./days/day02/part2.js)
 * [ ] Day 03 – Part 1 / Part 2
 * [ ] Day 04 – Part 1 / Part 2
 * [ ] Day 05 – Part 1 / Part 2
