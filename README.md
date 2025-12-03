@@ -136,8 +136,10 @@ The runner automatically selects the solver and resolves the input file (part-sp
 
 Checklist of solved days:
 
-* [X] Day 01 – [X] Part 1 / [X] Part 2
-* [ ] Day 02 – Part 1 / Part 2
+* [X] [Day 01 Part 1](./days/day01/part1.js)
+* [X] [Day 01 Part 2](./days/day01/part2.js)
+* [X] [Day 02 Part 1](./days/day02/part1.js)
+* [ ] Day 02 Part 2
 * [ ] Day 03 – Part 1 / Part 2
 * [ ] Day 04 – Part 1 / Part 2
 * [ ] Day 05 – Part 1 / Part 2
@@ -148,19 +150,6 @@ Checklist of solved days:
 * [ ] Day 10 – Part 1 / Part 2
 * [ ] Day 11 – Part 1 / Part 2
 * [ ] Day 12 – Part 1 / Part 2
-* [ ] Day 13 – Part 1 / Part 2
-* [ ] Day 14 – Part 1 / Part 2
-* [ ] Day 15 – Part 1 / Part 2
-* [ ] Day 16 – Part 1 / Part 2
-* [ ] Day 17 – Part 1 / Part 2
-* [ ] Day 18 – Part 1 / Part 2
-* [ ] Day 19 – Part 1 / Part 2
-* [ ] Day 20 – Part 1 / Part 2
-* [ ] Day 21 – Part 1 / Part 2
-* [ ] Day 22 – Part 1 / Part 2
-* [ ] Day 23 – Part 1 / Part 2
-* [ ] Day 24 – Part 1 / Part 2
-* [ ] Day 25 – Part 1 / Part 2
 
 As days are solved, this section can be updated with links to the corresponding solution files and puzzle titles.
 
