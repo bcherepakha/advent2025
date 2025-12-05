@@ -1,3 +1,5 @@
+// days/_lib/grid.js
+
 /**
  * Immutable 2D grid wrapper for Advent of Code puzzles.
  */
@@ -41,15 +43,12 @@ export class Grid {
    */
   neighbors(x, y, dirs) {
     const result = new Array(dirs.length);
-    
     for (let i = 0; i < dirs.length; i++) {
       const [dx, dy] = dirs[i];
       const nx = x + dx;
       const ny = y + dy;
-
       result[i] = { x: nx, y: ny, value: this.get(nx, ny) };
     }
-
     return result;
   }
 
@@ -76,6 +75,26 @@ export class Grid {
     }
 
     return new Grid(lines);
+  }
+
+  /**
+   * Reduce over all cells of the grid.
+   *
+   * @template T
+   * @param {(acc:T, x:number, y:number, grid:Grid) => T} reducer
+   * @param {T} initialValue
+   * @returns {T}
+   */
+  toNodes(reducer, initialValue) {
+    let result = initialValue;
+
+    for (let y = 0; y < this.height; y++) {
+      for (let x = 0; x < this.width; x++) {
+        result = reducer(result, x, y, this);
+      }
+    }
+
+    return result;
   }
 
   /**
