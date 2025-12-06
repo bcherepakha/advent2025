@@ -9,7 +9,11 @@
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   --radius: 14px;
   --gap: 1.5rem;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
   color: var(--text);
   background-color: var(--bg);
 }
@@ -22,9 +26,9 @@
 
 body {
   margin: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(123, 208, 255, 0.08), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(255, 209, 102, 0.08), transparent 30%),
-    var(--bg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(123, 208, 255, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(255, 209, 102, 0.08), transparent 30%), var(--bg);
   color: var(--text);
   min-height: 100vh;
 }
@@ -121,7 +125,10 @@ a:hover {
   color: var(--text);
   cursor: pointer;
   font-weight: 600;
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
 }
 
 .btn--primary {

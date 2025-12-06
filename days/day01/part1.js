@@ -24,8 +24,9 @@ export default async function solve(input) {
     day: 1,
     part: 1,
     title: "Secret Entrance",
-    question: "What is the number of times the dial points at 0 after any rotation in the sequence?",
-    answer
+    question:
+      "What is the number of times the dial points at 0 after any rotation in the sequence?",
+    answer,
   };
 }
 

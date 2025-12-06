@@ -18,7 +18,7 @@ export default async function solve(input) {
     title: "Lobby",
     question:
       "There are many batteries in front of you. Find the maximum joltage possible from each bank; what is the total output joltage?",
-    answer
+    answer,
   };
 }
 
@@ -34,7 +34,7 @@ function solveCore(input) {
     validateLine: (line) => {
       if (line.length < 2) return false;
       return /^[1-9]+$/.test(line);
-    }
+    },
   });
 
   let total = 0;
@@ -63,14 +63,14 @@ function maxBankJoltage(line) {
 
   /** @type {number[]} */
   const digits = new Array(n);
-  
+
   for (let i = 0; i < n; i++) {
     digits[i] = Number(line[i]);
   }
 
   /** @type {number[]} */
   const suffixMax = new Array(n);
-  
+
   suffixMax[n - 1] = digits[n - 1];
 
   for (let i = n - 2; i >= 0; i--) {
@@ -89,7 +89,7 @@ function maxBankJoltage(line) {
 
     if (value > best) {
       best = value;
-      
+
       if (best === 99) {
         return best;
       }

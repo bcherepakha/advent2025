@@ -21,7 +21,6 @@ runBtn.addEventListener("click", async () => {
     const output = await fn(input);
 
     resultEl.textContent = output;
-    
   } catch (err) {
     resultEl.textContent = "Помилка: " + err.message;
   }

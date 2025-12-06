@@ -1,5 +1,4 @@
-Frontend overhaul plan (static, GitHub Pages)
-============================================
+# Frontend overhaul plan (static, GitHub Pages)
 
 - [ ] Main page skeleton (index.html) with cards for 12 days × 2 parts, progress bar, links (AoC, GitHub).
 - [ ] Shared data source for days/parts metadata (links, solved flags, titles from `solve` when available).

@@ -2,25 +2,14 @@ const repoBase = "https://github.com/bcherepakha/advent2025";
 const githubBase = `${repoBase}/blob/main`;
 const aocBase = "https://adventofcode.com/2025/day/";
 
-const solvedParts = new Set([
-  "1-1",
-  "1-2",
-  "2-1",
-  "2-2",
-  "3-1",
-  "3-2",
-  "4-1",
-  "4-2",
-  "5-1",
-  "5-2"
-]);
+const solvedParts = new Set(["1-1", "1-2", "2-1", "2-2", "3-1", "3-2", "4-1", "4-2", "5-1", "5-2"]);
 
 const titlesByDay = {
   1: "Secret Entrance",
   2: "Gift Shop",
   3: "Lobby",
   4: "Printing Department",
-  5: "Cafeteria"
+  5: "Cafeteria",
 };
 
 /**
@@ -48,9 +37,9 @@ export const days = Array.from({ length: 12 }, (_, index) => {
         title,
         githubLink,
         aocLink,
-        detailLink: null // placeholder for future per-day page
+        detailLink: null, // placeholder for future per-day page
       };
-    })
+    }),
   };
 });
 

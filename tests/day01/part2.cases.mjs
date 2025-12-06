@@ -29,7 +29,7 @@ const cases = [
     dir: "R",
     dist: 0,
     expectedHits: 0,
-    expectedPos: 50
+    expectedPos: 50,
   },
   {
     name: "R1 from 50: move to 51, no hits",
@@ -37,7 +37,7 @@ const cases = [
     dir: "R",
     dist: 1,
     expectedHits: 0,
-    expectedPos: 51
+    expectedPos: 51,
   },
   {
     name: "L1 from 0: move to 99, no hits",
@@ -45,7 +45,7 @@ const cases = [
     dir: "L",
     dist: 1,
     expectedHits: 0,
-    expectedPos: 99
+    expectedPos: 99,
   },
   {
     name: "R50 from 50: move to 0, one hit (final position is 0)",
@@ -53,7 +53,7 @@ const cases = [
     dir: "R",
     dist: 50,
     expectedHits: 1,
-    expectedPos: 0
+    expectedPos: 0,
   },
   {
     name: "R100 from 0: full circle, hit zero once, end at 0",
@@ -61,7 +61,7 @@ const cases = [
     dir: "R",
     dist: 100,
     expectedHits: 1,
-    expectedPos: 0
+    expectedPos: 0,
   },
   {
     name: "R1000 from 50: 10 full circles, 10 hits, end at 50",
@@ -69,7 +69,7 @@ const cases = [
     dir: "R",
     dist: 1000,
     expectedHits: 10,
-    expectedPos: 50
+    expectedPos: 50,
   },
   {
     name: "R115 from 14: cross zero once, end at 29",
@@ -77,7 +77,7 @@ const cases = [
     dir: "R",
     dist: 115,
     expectedHits: 1,
-    expectedPos: 29 // (14 + 115) % 100 = 129 % 100 = 29
+    expectedPos: 29, // (14 + 115) % 100 = 129 % 100 = 29
   },
   {
     name: "L115 from 14: cross zero twice, end at 99",
@@ -85,8 +85,8 @@ const cases = [
     dir: "L",
     dist: 115,
     expectedHits: 2,
-    expectedPos: 99 // (14 - 115) mod 100 = -101 mod 100 = 99
-  }
+    expectedPos: 99, // (14 - 115) mod 100 = -101 mod 100 = 99
+  },
 ];
 
 async function main() {

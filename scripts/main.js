@@ -24,7 +24,7 @@ function computeProgress(data) {
     totalParts,
     solvedParts,
     solvedDays,
-    percent: totalParts === 0 ? 0 : (solvedParts / totalParts) * 100
+    percent: totalParts === 0 ? 0 : (solvedParts / totalParts) * 100,
   };
 }
 
@@ -123,7 +123,9 @@ function hydrateLinks() {
     link.href = runnerPath;
   });
 
-  const repoLinks = document.querySelectorAll(`a[href="https://github.com/bcherepakha/advent2025"]`);
+  const repoLinks = document.querySelectorAll(
+    `a[href="https://github.com/bcherepakha/advent2025"]`
+  );
   repoLinks.forEach((link) => {
     link.href = repoUrl;
   });

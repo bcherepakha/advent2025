@@ -17,9 +17,8 @@ export default async function solve(input) {
     day: 4,
     part: 2,
     title: "Printing Department",
-    question:
-      "How many rolls of paper in total can be removed by the Elves and their forklifts?",
-    answer
+    question: "How many rolls of paper in total can be removed by the Elves and their forklifts?",
+    answer,
   };
 }
 
@@ -36,7 +35,7 @@ function solveCore(input) {
       if (!/^[.@]+$/.test(line)) return false;
       if (index === 0) return true;
       return line.length === all[0].length;
-    }
+    },
   });
 
   const grid = new Grid(lines);
@@ -92,7 +91,7 @@ function buildRollMap(grid) {
       y,
       degree,
       removed: false,
-      inQueue: false
+      inQueue: false,
     });
 
     return map;

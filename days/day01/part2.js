@@ -21,8 +21,9 @@ export default async function solve(input) {
     day: 1,
     part: 2,
     title: "Secret Entrance",
-    question: "Using password method 0x434C49434B, how many times does the dial point at 0 during all clicks?",
-    answer
+    question:
+      "Using password method 0x434C49434B, how many times does the dial point at 0 during all clicks?",
+    answer,
   };
 }
 
@@ -40,7 +41,7 @@ function solveCore(input) {
 
   for (const { dir, value } of steps) {
     const { zeroHits } = dial.move(dir, value, { countZeroHits: true });
-    
+
     zeroCount += zeroHits;
   }
 

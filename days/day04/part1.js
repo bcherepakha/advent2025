@@ -21,7 +21,7 @@ export default async function solve(input) {
     title: "Printing Department",
     question:
       "Consider your complete diagram of the paper roll locations. How many rolls of paper can be accessed by a forklift?",
-    answer
+    answer,
   };
 }
 
@@ -38,7 +38,7 @@ function solveCore(input) {
       if (!/^[.@]+$/.test(line)) return false;
       if (index === 0) return true;
       return line.length === all[0].length;
-    }
+    },
   });
 
   const grid = new Grid(lines);

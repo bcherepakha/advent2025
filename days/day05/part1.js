@@ -19,7 +19,7 @@ export default async function solve(input) {
     title: "Cafeteria",
     question:
       "Process the database file from the new inventory management system. How many of the available ingredient IDs are fresh?",
-    answer
+    answer,
   };
 }
 
@@ -34,16 +34,16 @@ function solveCore(input) {
 
   const rangeLines = parseLines(rangesBlock, {
     onInvalid: "error",
-    validateLine: (line) => /^\d+-\d+$/.test(line)
+    validateLine: (line) => /^\d+-\d+$/.test(line),
   });
 
   const idLines = parseLines(idsBlock ?? "", {
     onInvalid: "error",
-    validateLine: (line) => /^\d+$/.test(line)
+    validateLine: (line) => /^\d+$/.test(line),
   });
 
   const ranges = parseAndMergeRanges(rangeLines, {
-    parseValue: (s) => Number(s)
+    parseValue: (s) => Number(s),
   });
 
   const ids = idLines.map((line) => Number(line));

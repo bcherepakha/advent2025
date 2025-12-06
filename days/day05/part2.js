@@ -19,7 +19,7 @@ export default async function solve(input) {
     title: "Cafeteria",
     question:
       "How many ingredient IDs are considered to be fresh according to the fresh ingredient ID ranges?",
-    answer
+    answer,
   };
 }
 
@@ -34,18 +34,18 @@ function solveCore(input) {
 
   const rangeLines = parseLines(rangesBlock, {
     onInvalid: "error",
-    validateLine: (line) => /^\d+-\d+$/.test(line)
+    validateLine: (line) => /^\d+-\d+$/.test(line),
   });
 
   const ranges = parseAndMergeRanges(rangeLines, {
-    parseValue: (s) => Number(s)
+    parseValue: (s) => Number(s),
   });
 
   let total = 0;
 
   for (let i = 0; i < ranges.length; i++) {
     const r = ranges[i];
-    
+
     total += r.end - r.start + 1;
   }
 

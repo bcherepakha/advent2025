@@ -111,67 +111,65 @@ export function parseRanges(input, { onInvalid = "error" }) {
  * @template T
  * @param {string[]} lines
  * @param {{
-*   parseValue?: (s: string) => T
-* }} [options]
-* @returns {{ start: T, end: T }[]}
-*/
+ *   parseValue?: (s: string) => T
+ * }} [options]
+ * @returns {{ start: T, end: T }[]}
+ */
 export function parseAndMergeRanges(lines, options = {}) {
- const {
-   parseValue = (s) => BigInt(s)
- } = options;
+  const { parseValue = (s) => BigInt(s) } = options;
 
- /** @type {{ start: T, end: T }[]} */
- const raw = [];
+  /** @type {{ start: T, end: T }[]} */
+  const raw = [];
 
- for (let i = 0; i < lines.length; i++) {
-   const line = lines[i].trim();
-   if (!line) continue;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
 
-   const parts = line.split("-");
-   if (parts.length !== 2) {
-     throw new Error(`Invalid range at line ${i}: "${line}"`);
-   }
+    const parts = line.split("-");
+    if (parts.length !== 2) {
+      throw new Error(`Invalid range at line ${i}: "${line}"`);
+    }
 
-   const start = parseValue(parts[0]);
-   const end = parseValue(parts[1]);
+    const start = parseValue(parts[0]);
+    const end = parseValue(parts[1]);
 
-   if (end < start) {
-     throw new Error(`Range start > end at line ${i}: "${line}"`);
-   }
+    if (end < start) {
+      throw new Error(`Range start > end at line ${i}: "${line}"`);
+    }
 
-   raw.push({ start, end });
- }
+    raw.push({ start, end });
+  }
 
- if (raw.length === 0) return [];
+  if (raw.length === 0) return [];
 
- raw.sort((a, b) => {
-   if (a.start < b.start) return -1;
-   if (a.start > b.start) return 1;
-   if (a.end < b.end) return -1;
-   if (a.end > b.end) return 1;
-   return 0;
- });
+  raw.sort((a, b) => {
+    if (a.start < b.start) return -1;
+    if (a.start > b.start) return 1;
+    if (a.end < b.end) return -1;
+    if (a.end > b.end) return 1;
+    return 0;
+  });
 
- /** @type {{ start: T, end: T }[]} */
- const merged = [];
- let current = { start: raw[0].start, end: raw[0].end };
+  /** @type {{ start: T, end: T }[]} */
+  const merged = [];
+  let current = { start: raw[0].start, end: raw[0].end };
 
- for (let i = 1; i < raw.length; i++) {
-   const r = raw[i];
+  for (let i = 1; i < raw.length; i++) {
+    const r = raw[i];
 
-   if (r.start <= current.end) {
-     if (r.end > current.end) {
-       current.end = r.end;
-     }
-   } else {
-     merged.push(current);
-     current = { start: r.start, end: r.end };
-   }
- }
+    if (r.start <= current.end) {
+      if (r.end > current.end) {
+        current.end = r.end;
+      }
+    } else {
+      merged.push(current);
+      current = { start: r.start, end: r.end };
+    }
+  }
 
- merged.push(current);
+  merged.push(current);
 
- return merged;
+  return merged;
 }
 
 /**

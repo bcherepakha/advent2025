@@ -40,7 +40,7 @@ function printUsage() {
       "Examples:",
       "  node run.mjs 1",
       "  node run.mjs 1 2",
-      "  node run.mjs 3 1 ./inputs/day03-example.txt"
+      "  node run.mjs 3 1 ./inputs/day03-example.txt",
     ].join("\n")
   );
 }
@@ -140,7 +140,7 @@ function parseArgs() {
   return {
     day,
     part,
-    inputPath: inputArg
+    inputPath: inputArg,
   };
 }
 

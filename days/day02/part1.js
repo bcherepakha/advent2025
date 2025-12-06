@@ -1,4 +1,4 @@
-import { parseRanges } from "../_lib/ranges.js"; 
+import { parseRanges } from "../_lib/ranges.js";
 import { ceilDiv } from "../_lib/math.js";
 
 /**
@@ -32,7 +32,7 @@ export default async function solve(input) {
     title: "Gift Shop",
     question: "What do you get if you add up all of the invalid IDs?",
     // BigInt → string for safe output
-    answer: answer.toString()
+    answer: answer.toString(),
   };
 }
 
@@ -44,7 +44,7 @@ export default async function solve(input) {
  */
 function solveCore(input) {
   const ranges = parseRanges(input, { onInvalid: "error" });
-  
+
   if (ranges.length === 0) return 0n;
 
   let total = 0n;
@@ -93,11 +93,11 @@ function sumInvalidInRange(min, max) {
   let sum = 0n;
 
   for (let k = 1; k <= maxHalfDigits; k++) {
-    const base = pow10[k];        // 10^k
-    const factor = base + 1n;     // 10^k + 1
+    const base = pow10[k]; // 10^k
+    const factor = base + 1n; // 10^k + 1
 
     const dDigitMin = pow10[k - 1]; // 10^(k-1)  (smallest k-digit number)
-    const dDigitMax = base - 1n;    // 10^k - 1  (largest k-digit number)
+    const dDigitMax = base - 1n; // 10^k - 1  (largest k-digit number)
 
     // Restrict d so that n = d * factor lies in [min, max]:
     //   min <= d * factor <= max
@@ -115,7 +115,7 @@ function sumInvalidInRange(min, max) {
     //   count = dEnd - dStart + 1
     //   sumD = (dStart + dEnd) * count / 2
     const count = dEnd - dStart + 1n;
-    const sumD = (dStart + dEnd) * count / 2n;
+    const sumD = ((dStart + dEnd) * count) / 2n;
     sum += sumD * factor;
   }
 

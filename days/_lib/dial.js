@@ -164,7 +164,7 @@ export function parseRotations(input, { onInvalid = "ignore" } = {}) {
 
     if (!validDir || !validValue) {
       const message = `Invalid rotation at line ${index + 1}: "${raw}"`;
-      
+
       if (onInvalid === "ignore") {
         return;
       }

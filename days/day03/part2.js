@@ -17,7 +17,7 @@ export default async function solve(input) {
     part: 2,
     title: "Lobby",
     question: "What is the new total output joltage?",
-    answer
+    answer,
   };
 }
 
@@ -33,7 +33,7 @@ function solveCore(input) {
     validateLine: (line) => {
       if (line.length < 2) return false;
       return /^[1-9]+$/.test(line);
-    }
+    },
   });
 
   const K = 12;
@@ -58,7 +58,7 @@ function solveCore(input) {
  */
 function maxBankJoltageK(line, K) {
   const n = line.length;
-  
+
   if (n === 0) {
     return 0;
   }
@@ -75,11 +75,7 @@ function maxBankJoltageK(line, K) {
   for (let i = 0; i < n; i++) {
     const d = Number(line[i]);
 
-    while (
-      toRemove > 0 &&
-      stack.length > 0 &&
-      stack[stack.length - 1] < d
-    ) {
+    while (toRemove > 0 && stack.length > 0 && stack[stack.length - 1] < d) {
       stack.pop();
       toRemove -= 1;
     }
@@ -92,7 +88,7 @@ function maxBankJoltageK(line, K) {
   }
 
   let value = 0;
-  
+
   for (let i = 0; i < K; i++) {
     value = value * 10 + stack[i];
   }

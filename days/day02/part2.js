@@ -1,4 +1,4 @@
-import { parseRanges } from "../_lib/ranges.js"; 
+import { parseRanges } from "../_lib/ranges.js";
 import { ceilDiv, buildPow10 } from "../_lib/math.js";
 
 /**
@@ -30,9 +30,8 @@ export default async function solve(input) {
     day: 2,
     part: 2,
     title: "Gift Shop",
-    question:
-      "What do you get if you add up all of the invalid IDs using these new rules?",
-    answer: answer.toString()
+    question: "What do you get if you add up all of the invalid IDs using these new rules?",
+    answer: answer.toString(),
   };
 }
 
@@ -93,7 +92,7 @@ function sumInvalidRepeatedInRange(min, max) {
     const base = pow10[k]; // 10^k
 
     const dDigitMin = pow10[k - 1]; // 10^(k-1)
-    const dDigitMax = base - 1n;    // 10^k - 1
+    const dDigitMax = base - 1n; // 10^k - 1
 
     if (dDigitMin > dDigitMax) continue;
 
