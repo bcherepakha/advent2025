@@ -30,14 +30,13 @@ I use this project to:
 
 ## Project structure
 
-(Updated with unified result object and async solvers)
-
 ```
 .
 ├── index.html       # browser runner entry point
 ├── app.js           # runner logic (dynamic imports)
 ├── style.css        # simple styling for the runner UI
 ├── days/
+│   ├── _lib/        # shared helpers for parsing/math/etc.
 │   ├── day01/
 │   │   ├── part1.js # solver for day 01, part 1
 │   │   └── part2.js # solver for day 01, part 2
@@ -45,35 +44,45 @@ I use this project to:
 │   │   ├── part1.js
 │   │   └── part2.js
 │   └── ...
+├── tests/           # small ad-hoc example runners per day/part
 ├── .editorconfig
 ├── .eslintrc.cjs
 ├── .gitignore
 ├── .prettierrc
 ├── package.json
-├── LICENSE
 └── README.md
 ```
 
 Each day lives in its own folder:
 
-* `days/dayXX/part1.js` – solution for Part 1
-* `days/dayXX/part2.js` – solution for Part 2
+ * `days/dayXX/part1.js` – solution for Part 1
+ * `days/dayXX/part2.js` – solution for Part 2
 
-Solvers are implemented as **pure functions**:
+Solvers are implemented as **async functions** that return an object with metadata and the `answer`:
 
 ```js
 // days/day01/part1.js
 export default async function solvePart1(input) {
   const lines = input.trim().split("\n");
-  // real logic goes here
-  return String(lines.length);
+  const answer = lines.length; // real logic goes here
+
+  return {
+    day: 1,
+    part: 1,
+    title: "Puzzle title",
+    question: "Puzzle question text",
+    answer
+  };
 }
 ```
 
 The same functions can be used:
 
 * in the browser runner (via dynamic `import`),
-* in Node scripts / CLI helpers (reading `input.txt` and printing the result).
+* in Node scripts / CLI helpers (reading `input.txt` and printing the result),
+* from ad-hoc example scripts in `tests/dayXX`.
+
+The CLI runner unwraps the `answer` field if an object is returned. The simple browser runner currently renders whatever the solver returns, so you may want to return a primitive (string/number) or adjust the UI to pick `result.answer`.
 
 ---
 
