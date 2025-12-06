@@ -1,18 +1,11 @@
-import solve from "../../days/day05/part1.js";
+import solve from "../../days/day06/part1.js";
 
-const exampleInput = `3-5
-10-14
-16-20
-12-18
+const exampleInput = `123 328  51 64 
+ 45 64  387 23 
+  6 98  215 314
+*   +   *   +  `;
 
-1
-5
-8
-11
-17
-32`;
-
-const expectedAnswer = "3";
+const expectedAnswer = "4277556";
 
 async function main() {
   const result = await solve(exampleInput);
@@ -23,10 +16,10 @@ async function main() {
       : String(result);
 
   if (answer === expectedAnswer) {
-    console.log("Day 5, Part 1 example: OK");
+    console.log("Day 6, Part 1 example: OK");
     console.log("Answer:", answer);
   } else {
-    console.error("Day 5, Part 1 example: FAIL");
+    console.error("Day 6, Part 1 example: FAIL");
     console.error("Expected:", expectedAnswer);
     console.error("Got     :", answer);
     process.exitCode = 1;

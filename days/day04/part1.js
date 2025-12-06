@@ -1,5 +1,3 @@
-// days/day04/part1.js
-
 import { parseLines } from "../_lib/input.js";
 import { Grid } from "../_lib/grid.js";
 

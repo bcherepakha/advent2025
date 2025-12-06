@@ -1,4 +1,3 @@
-// tests/day05/part2.example.mjs
 import solve from "../../days/day05/part2.js";
 
 const exampleInput = `3-5

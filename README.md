@@ -155,7 +155,8 @@ Checklist of solved days:
 - [x] [Day 04 Part 2](./days/day04/part2.js)
 - [x] [Day 05 Part 1](./days/day05/part1.js)
 - [x] [Day 05 Part 2](./days/day05/part2.js)
-- [ ] Day 06 – Part 1 / Part 2
+- [x] [Day 06 Part 1](./days/day06/part1.js)
+- [x] [Day 06 Part 2](./days/day06/part2.js)
 - [ ] Day 07 – Part 1 / Part 2
 - [ ] Day 08 – Part 1 / Part 2
 - [ ] Day 09 – Part 1 / Part 2

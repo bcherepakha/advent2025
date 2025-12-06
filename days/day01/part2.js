@@ -1,4 +1,3 @@
-// days/day01/part2.js
 import { Dial, parseRotations } from "../_lib/dial.js";
 
 /**
