@@ -105,8 +105,8 @@ function sumInvalidInRange(min, max) {
     const dRangeMin = ceilDiv(min, factor);
     const dRangeMax = max / factor; // integer division = floor
 
-    let dStart = dDigitMin > dRangeMin ? dDigitMin : dRangeMin;
-    let dEnd = dDigitMax < dRangeMax ? dDigitMax : dRangeMax;
+    const dStart = dDigitMin > dRangeMin ? dDigitMin : dRangeMin;
+    const dEnd = dDigitMax < dRangeMax ? dDigitMax : dRangeMax;
 
     if (dStart > dEnd) continue;
 

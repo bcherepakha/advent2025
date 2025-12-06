@@ -115,8 +115,8 @@ function sumInvalidRepeatedInRange(min, max) {
       const dRangeMin = ceilDiv(min, R);
       const dRangeMax = max / R;
 
-      let dStart = dDigitMin > dRangeMin ? dDigitMin : dRangeMin;
-      let dEnd = dDigitMax < dRangeMax ? dDigitMax : dRangeMax;
+      const dStart = dDigitMin > dRangeMin ? dDigitMin : dRangeMin;
+      const dEnd = dDigitMax < dRangeMax ? dDigitMax : dRangeMax;
 
       if (dStart > dEnd) continue;
 
