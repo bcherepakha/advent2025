@@ -10,7 +10,7 @@ runBtn.addEventListener("click", async () => {
   const input = inputEl.value;
 
   if (!day || !input) {
-    resultEl.textContent = "Please enter day number and input text.";
+    resultEl.textContent = "Вкажіть номер дня та додайте вхідні дані.";
     return;
   }
 
@@ -23,6 +23,6 @@ runBtn.addEventListener("click", async () => {
     resultEl.textContent = output;
     
   } catch (err) {
-    resultEl.textContent = "Error: " + err.message;
+    resultEl.textContent = "Помилка: " + err.message;
   }
 });

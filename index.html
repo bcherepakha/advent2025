@@ -1,34 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <title>Advent of Code 2025 Runner</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advent of Code 2025 — Progress</title>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-  <h1>Advent of Code 2025 Runner</h1>
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo__dot"></span>
+      <span class="logo__text">Advent of Code 2025</span>
+    </div>
+    <nav class="site-nav">
+      <a href="https://adventofcode.com/2025" target="_blank" rel="noreferrer">AoC 2025</a>
+      <a href="https://github.com/bcherepakha/advent2025" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="runner.html">Runner</a>
+    </nav>
+  </header>
 
-  <div class="controls">
-    <label>
-      Day:
-      <input id="day" type="number" min="1" max="25" />
-    </label>
+  <main class="page">
+    <section class="hero">
+      <p class="hero__eyebrow">Особистий трекер прогресу</p>
+      <h1>12 днів. 24 задачі. Зимовий марафон заради фану та практики.</h1>
+      <p class="hero__lede">
+        Розв’язую Advent of Code 2025, фіксую рішення та візуалізації для кожної частини.
+        Посилання на вихідні файли, сторінка дня з поясненнями, простий браузерний раннер — усе поруч.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="runner.html">Відкрити раннер</a>
+        <a class="btn btn--ghost" href="https://github.com/bcherepakha/advent2025" target="_blank" rel="noreferrer">
+          Репозиторій
+        </a>
+      </div>
+    </section>
 
-    <label>
-      Part:
-      <select id="part">
-        <option value="1">Part 1</option>
-        <option value="2">Part 2</option>
-      </select>
-    </label>
-  </div>
+    <section class="progress">
+      <div class="progress__stats">
+        <div class="stat">
+          <div class="stat__label">Розв’язано задач</div>
+          <div class="stat__value"><span data-solved-count>0</span>/<span data-total-count>24</span></div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Закрито днів</div>
+          <div class="stat__value"><span data-days-count>0</span>/12</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Прогрес</div>
+          <div class="stat__value"><span data-progress-percent>0</span>%</div>
+        </div>
+      </div>
+      <div class="progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress__fill" data-progress-fill></div>
+      </div>
+    </section>
 
-  <textarea id="input" placeholder="Paste your puzzle input here"></textarea>
+    <section class="days">
+      <div class="days__header">
+        <div>
+          <p class="section-kicker">Грудневі пригоди</p>
+          <h2>Картки днів і частин</h2>
+          <p class="section-lede">
+            Для кожної частини — посилання на AoC, вихідний файл на GitHub і майбутня візуалізація з поясненнями.
+          </p>
+        </div>
+      </div>
+      <div id="days-grid" class="days-grid" aria-live="polite"></div>
+    </section>
+  </main>
 
-  <button id="run">Run</button>
+  <footer class="site-footer">
+    <div class="footer__content">
+      <p>Північний полюс, грудень 2025. Роблю це заради фану, практики та красивих візуалізацій.</p>
+      <div class="footer__links">
+        <a href="https://adventofcode.com/2025" target="_blank" rel="noreferrer">Advent of Code</a>
+        <a href="https://github.com/bcherepakha/advent2025" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="runner.html">Runner</a>
+      </div>
+    </div>
+  </footer>
 
-  <pre id="result"></pre>
-
-  <script type="module" src="app.js"></script>
+  <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
