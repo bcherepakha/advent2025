@@ -1,5 +1,3 @@
-// days/_lib/math.js
-
 /**
  * Compute ceil(a / b) for non-negative BigInts.
  *

@@ -61,7 +61,6 @@ Each day lives in its own folder:
 Solvers are implemented as **async functions** that return an object with metadata and the `answer`:
 
 ```js
-// days/day01/part1.js
 export default async function solvePart1(input) {
   const lines = input.trim().split("\n");
   const answer = lines.length; // real logic goes here
@@ -157,7 +156,8 @@ Checklist of solved days:
 - [x] [Day 05 Part 2](./days/day05/part2.js)
 - [x] [Day 06 Part 1](./days/day06/part1.js)
 - [x] [Day 06 Part 2](./days/day06/part2.js)
-- [ ] Day 07 – Part 1 / Part 2
+- [x] [Day 07 Part 1](./days/day07/part1.js)
+- [x] [Day 07 Part 2](./days/day07/part2.js)
 - [ ] Day 08 – Part 1 / Part 2
 - [ ] Day 09 – Part 1 / Part 2
 - [ ] Day 10 – Part 1 / Part 2

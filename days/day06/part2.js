@@ -18,7 +18,7 @@ export default async function solve(input) {
     title: "Trash Compactor",
     question:
       "Solve the problems on the math worksheet again. What is the grand total found by adding together all of the answers to the individual problems?",
-    answer
+    answer,
   };
 }
 

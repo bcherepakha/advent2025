@@ -18,7 +18,7 @@ export default async function solve(input) {
     title: "Trash Compactor",
     question:
       "Solve the problems on the math worksheet. What is the grand total found by adding together all of the answers to the individual problems?",
-    answer
+    answer,
   };
 }
 
@@ -28,7 +28,7 @@ export default async function solve(input) {
  */
 function solveCore(input) {
   const { lines, width, height } = normalizeGrid(input);
-  
+
   if (height === 0 || width === 0) return 0;
 
   const spans = findColumnSpans(lines);
