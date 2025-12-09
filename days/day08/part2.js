@@ -19,7 +19,7 @@ export default async function solve(input) {
     title: "Playground",
     question:
       "Continuing to connect the closest unconnected pairs until all junction boxes are in a single circuit, what is the product of the X coordinates of the last two junction boxes connected?",
-    answer
+    answer,
   };
 }
 
@@ -32,7 +32,7 @@ export default async function solve(input) {
 export function solveCore(input) {
   const lines = parseLines(input, {
     onInvalid: "error",
-    validateLine: (line) => /^-?\d+,-?\d+,-?\d+$/.test(line)
+    validateLine: (line) => /^-?\d+,-?\d+,-?\d+$/.test(line),
   });
 
   /** @type {{ x:number, y:number, z:number }[]} */

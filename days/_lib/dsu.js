@@ -43,8 +43,8 @@ export class DSU {
    * @returns {boolean} true if merged, false if already in same set
    */
   union(a, b) {
-    let ra = this.find(a);
-    let rb = this.find(b);
+    const ra = this.find(a);
+    const rb = this.find(b);
 
     if (ra === rb) return false;
 

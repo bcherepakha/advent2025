@@ -19,7 +19,7 @@ export default async function solve(input) {
     title: "Playground",
     question:
       "After connecting the 1000 closest pairs of junction boxes, what is the product of the sizes of the three largest circuits?",
-    answer
+    answer,
   };
 }
 
@@ -33,7 +33,7 @@ export default async function solve(input) {
 export function solveCore(input, numConnections = 1000) {
   const lines = parseLines(input, {
     onInvalid: "error",
-    validateLine: (line) => /^-?\d+,-?\d+,-?\d+$/.test(line)
+    validateLine: (line) => /^-?\d+,-?\d+,-?\d+$/.test(line),
   });
 
   /** @type {{ x:number, y:number, z:number }[]} */
